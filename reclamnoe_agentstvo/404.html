@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена - Рекламное агентство</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><img src="img/logo.svg" alt="Рекламное агентство"></div>
+            Рекламное <span>агентство</span>
+        </a>
+        
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="services.html" class="nav-link">Услуги</a></li>
+                <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li id="authNav">
+                    <a href="login.html" class="nav-link" id="loginLink">Вход</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <button id="themeToggle" aria-label="Сменить тему">🌓</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <main class="page-content">
+        <div class="error-page">
+            <div class="container">
+                <div class="error-content">
+                    <div class="error-code">404</div>
+                    <h1 class="error-title">Страница не найдена</h1>
+                    <p class="error-message">К сожалению, запрашиваемая страница не существует или была перемещена.</p>
+                    
+                    <div class="error-actions">
+                        <a href="index.html" class="discuss-btn">
+                            <i class="fas fa-home"></i> На главную
+                        </a>
+                        <a href="contacts.html" class="contact-btn">
+                            <i class="fas fa-headset"></i> Связаться с нами
+                        </a>
+                    </div>
+                    
+                    <div class="error-suggestions">
+                        <h3>Возможно, вы ищете:</h3>
+                        <ul>
+                            <li><a href="services.html">Наши услуги</a></li>
+                            <li><a href="portfolio.html">Портфолио проектов</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                            <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="terms.html">Пользовательское соглашение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Контакты</h3>
+                    <p>г. Владивосток, Океанский проспект, 101а</p>
+                    <p>г. Находка, ул. Сенявина, 12</p>
+                    <p>+7 (924) 000-97-96</p>
+                    <p>info@inside360.ru</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3 class="footer-title">Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://vk.com/inside360ru" class="social-link" target="_blank" aria-label="ВКонтакте">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/inside360" class="social-link" target="_blank" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/79240025330" class="social-link" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                
+                <a href="privacy.html" class="privacy-link">Политика конфиденциальности</a>
+                <p class="copyright">© 2024 INSIDE360. Все права защищены</p>
+                <p>ИНН: 1234567890, ОГРН: 1234567890123</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add 404 page styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .error-page {
+                    min-height: calc(100vh - 300px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 80px 0;
+                }
+                
+                .error-content {
+                    text-align: center;
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+                
+                .error-code {
+                    font-size: 120px;
+                    font-weight: 800;
+                    color: var(--primary-red);
+                    margin-bottom: 20px;
+                    line-height: 1;
+                }
+                
+                .error-title {
+                    font-size: 36px;
+                    margin-bottom: 20px;
+                }
+                
+                .error-message {
+                    font-size: 18px;
+                    color: var(--light-gray);
+                    margin-bottom: 40px;
+                    line-height: 1.6;
+                }
+                
+                .error-actions {
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+                    margin-bottom: 50px;
+                    flex-wrap: wrap;
+                }
+                
+                .error-actions a {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    text-decoration: none;
+                    padding: 15px 30px;
+                    border-radius: 50px;
+                    font-weight: 600;
+                    transition: all 0.3s;
+                }
+                
+                .discuss-btn {
+                    background: var(--gradient-red);
+                    color: white;
+                }
+                
+                .contact-btn {
+                    background: transparent;
+                    border: 2px solid var(--primary-red);
+                    color: var(--primary-red);
+                }
+                
+                .contact-btn:hover {
+                    background: var(--primary-red);
+                    color: white;
+                }
+                
+                .error-suggestions {
+                    text-align: left;
+                    background: var(--card-bg);
+                    padding: 30px;
+                    border-radius: var(--border-radius);
+                }
+                
+                .error-suggestions h3 {
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                
+                .error-suggestions ul {
+                    list-style: none;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 15px;
+                }
+                
+                .error-suggestions li {
+                    margin-bottom: 10px;
+                }
+                
+                .error-suggestions a {
+                    color: var(--text-color);
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    transition: color 0.3s;
+                }
+                
+                .error-suggestions a:hover {
+                    color: var(--primary-red);
+                }
+                
+                .error-suggestions a:before {
+                    content: '→';
+                    color: var(--primary-red);
+                }
+                
+                @media (max-width: 768px) {
+                    .error-code {
+                        font-size: 80px;
+                    }
+                    
+                    .error-title {
+                        font-size: 28px;
+                    }
+                    
+                    .error-actions {
+                        flex-direction: column;
+                    }
+                    
+                    .error-actions a {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

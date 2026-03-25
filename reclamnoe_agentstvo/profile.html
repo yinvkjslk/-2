@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет | INSIDE360 — Рекламное агентство</title>
+    <meta name="description" content="Личный кабинет клиента рекламного агентства INSIDE360. Просмотр заявок и история сотрудничества.">
+    <meta name="csrf-token" content="<?php echo isset($_SESSION['csrf_token']) ? $_SESSION['csrf_token'] : ''; ?>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><img src="img/logo.svg" alt="Рекламное агентство"></div>
+            Рекламное <span>агентство</span>
+        </a>
+        
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="services.html" class="nav-link">Услуги</a></li>
+                <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li id="authNav">
+                </li>
+            </ul>
+        </nav>
+        
+        <button id="themeToggle" aria-label="Сменить тему">🌓</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <main class="page-content">
+        <div class="container">
+            <div class="profile-page" id="profilePage">
+                <div class="loading">Загрузка профиля...</div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="terms.html">Пользовательское соглашение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Контакты</h3>
+                    <p>г. Владивосток, Океанский проспект, 101а</p>
+                    <p>г. Находка, ул. Сенявина, 12</p>
+                    <p>+7 (924) 000-97-96</p>
+                    <p>info@inside360.ru</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3 class="footer-title">Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://vk.com/inside360ru" class="social-link" target="_blank" aria-label="ВКонтакте">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/inside360" class="social-link" target="_blank" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/79240025330" class="social-link" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+<div class="footer-bottom">
+                <a href="privacy.html" class="privacy-link">Политика конфиденциальности</a>
+                <p class="copyright">© 2024 INSIDE360. Все права защищены</p>
+                <p>ИНН: 1234567890, ОГРН: 1234567890123</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="form-popup" id="projectForm">
+        <div class="form-container">
+            <button class="close-button" id="closeForm" aria-label="Закрыть">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="form-title">Обсудим ваш проект</h2>
+            <p class="form-subtitle">Наш менеджер свяжется с вами в ближайшие 10 минут</p>
+            
+            <form id="projectDiscussionForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Ваше имя *</label>
+                    <input type="text" id="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="phone" class="form-input" placeholder="+7 (999) 999-99-99" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" id="email" class="form-input" placeholder="example@mail.ru" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service" class="form-label">Интересующая услуга</label>
+                    <select id="service" class="form-input">
+                        <option value="">Выберите услугу</option>
+                        <option value="smm">SMM Продвижение</option>
+                        <option value="sites">Создание сайтов</option>
+                        <option value="context">Контекстная реклама</option>
+                        <option value="seo">SEO Оптимизация</option>
+                        <option value="listing">Листинг на маркетплейсах</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Сообщение (необязательно)</label>
+                    <textarea id="message" class="form-input" rows="3" placeholder="Расскажите о своем проекте..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>Я соглашаюсь с <a href="privacy.html">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/api-auth.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = auth.getCurrentUser();
+            
+            if (!currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            loadProfile();
+            
+            function loadProfile() {
+                const profilePage = document.getElementById('profilePage');
+                const requests = auth.getUserRequests(currentUser.id);
+                
+                // Подсчёт статистики
+                const totalRequests = requests.length;
+                const completedRequests = requests.filter(r => r.status === 'completed').length;
+                const inProgressRequests = requests.filter(r => r.status === 'in-progress').length;
+                const newRequests = requests.filter(r => r.status === 'new').length;
+                
+                let html = `
+                    <div class="profile-container">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="profile-info">
+                                <h1>${currentUser.name}</h1>
+                                <p class="profile-email"><i class="fas fa-envelope"></i> ${currentUser.email}</p>
+                                <p class="profile-date"><i class="fas fa-calendar-alt"></i> Зарегистрирован: ${new Date(currentUser.registrationDate).toLocaleDateString('ru-RU')}</p>
+                            </div>
+                            <div class="profile-actions">
+                                <button class="btn-primary" id="newRequestBtn">
+                                    <i class="fas fa-plus"></i> Новая заявка
+                                </button>
+                                <button class="btn-outline" id="editProfileBtn">
+                                    <i class="fas fa-edit"></i> Изменить профиль
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background: rgba(230, 57, 70, 0.2);">
+                                    <i class="fas fa-file-alt" style="color: var(--primary-red);"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number">${totalRequests}</span>
+                                    <span class="stat-label">Всего заявок</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background: rgba(40, 167, 69, 0.2);">
+                                    <i class="fas fa-check-circle" style="color: #28a745;"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number">${completedRequests}</span>
+                                    <span class="stat-label">Завершено</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background: rgba(0, 123, 255, 0.2);">
+                                    <i class="fas fa-spinner" style="color: #007bff;"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number">${inProgressRequests}</span>
+                                    <span class="stat-label">В работе</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background: rgba(255, 193, 7, 0.2);">
+                                    <i class="fas fa-clock" style="color: #ffc107;"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number">${newRequests}</span>
+                                    <span class="stat-label">Новых</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="requests-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-clipboard-list"></i> Мои заявки</h2>
+                            </div>
+                `;
+                
+                if (requests.length === 0) {
+                    html += `
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <h3>У вас пока нет заявок</h3>
+                            <p>Создайте свою первую заявку на услугу</p>
+                            <button class="btn-primary" id="emptyRequestBtn">
+                                <i class="fas fa-plus"></i> Создать заявку
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    html += `
+                        <div class="requests-list">
+                    `;
+                    
+                    // Сортируем по дате (новые сверху)
+                    const sortedRequests = [...requests].sort((a, b) => new Date(b.date) - new Date(a.date));
+                    
+                    sortedRequests.forEach(request => {
+                        const statusClass = `status-${request.status}`;
+                        const statusText = getStatusText(request.status);
+                        const date = new Date(request.date);
+                        const dateStr = date.toLocaleDateString('ru-RU');
+                        const timeStr = date.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+                        
+                        html += `
+                            <div class="request-card">
+                                <div class="request-id">#${request.id}</div>
+                                <div class="request-info">
+                                    <h3>${getServiceName(request.service)}</h3>
+                                    <p><i class="fas fa-calendar"></i> ${dateStr} в ${timeStr}</p>
+                                </div>
+                                <div class="request-status">
+                                    <span class="status-badge ${statusClass}">${statusText}</span>
+                                </div>
+                                <button class="btn-view" data-id="${request.id}">
+                                    <i class="fas fa-eye"></i> Подробнее
+                                </button>
+                            </div>
+                        `;
+                    });
+                    
+                    html += `</div>`;
+                }
+                
+                html += `</div></div>`;
+                
+                profilePage.innerHTML = html;
+                
+                // Обработчики событий
+                document.getElementById('newRequestBtn')?.addEventListener('click', () => {
+                    window.location.href = 'new-request.html';
+                });
+                
+                document.getElementById('createRequestBtn')?.addEventListener('click', () => {
+                    window.location.href = 'new-request.html';
+                });
+                
+                document.getElementById('emptyRequestBtn')?.addEventListener('click', () => {
+                    window.location.href = 'new-request.html';
+                });
+                
+                document.getElementById('editProfileBtn')?.addEventListener('click', () => {
+                    editProfile();
+                });
+                
+                document.querySelectorAll('.btn-view').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const requestId = this.dataset.id;
+                        viewRequest(requestId);
+                    });
+                });
+            }
+            
+            function getStatusText(status) {
+                const statusMap = {
+                    'new': 'Новая',
+                    'in-progress': 'В работе',
+                    'completed': 'Завершена'
+                };
+                return statusMap[status] || status;
+            }
+            
+            function getServiceName(service) {
+                const serviceMap = {
+                    'smm': 'SMM Продвижение',
+                    'sites': 'Создание сайтов',
+                    'context': 'Контекстная реклама',
+                    'seo': 'SEO Оптимизация',
+                    'listing': 'Листинг на маркетплейсах'
+                };
+                return serviceMap[service] || 'Услуга';
+            }
+            
+            function editProfile() {
+                const currentUser = auth.getCurrentUser();
+                
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay active';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2><i class="fas fa-user-edit"></i> Редактирование профиля</h2>
+                            <button class="close-modal"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editProfileForm">
+                                <div class="form-group">
+                                    <label for="editName" class="form-label"><i class="fas fa-user"></i> Ваше имя</label>
+                                    <input type="text" id="editName" class="form-input" value="${currentUser.name}" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="editEmail" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                                    <input type="email" id="editEmail" class="form-input" value="${currentUser.email}" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="editPhone" class="form-label"><i class="fas fa-phone"></i> Телефон</label>
+                                    <input type="tel" id="editPhone" class="form-input" value="${currentUser.phone || ''}" placeholder="+7 (999) 999-99-99">
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-primary">
+                                        <i class="fas fa-save"></i> Сохранить
+                                    </button>
+                                    <button type="button" class="btn-secondary" id="cancelEditBtn">Отмена</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                modal.querySelector('.close-modal').addEventListener('click', () => modal.remove());
+                modal.querySelector('#cancelEditBtn').addEventListener('click', () => modal.remove());
+                
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) modal.remove();
+                });
+                
+                const form = modal.querySelector('#editProfileForm');
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('editName').value.trim();
+                    const email = document.getElementById('editEmail').value.trim();
+                    const phone = document.getElementById('editPhone').value.trim();
+                    
+                    if (!name || !email) {
+                        alert('Пожалуйста, заполните обязательные поля');
+                        return;
+                    }
+                    
+                    // Обновляем в localStorage
+                    const users = JSON.parse(localStorage.getItem('marketing_agency_users')) || [];
+                    const userIndex = users.findIndex(u => u.id === currentUser.id);
+                    
+                    if (userIndex !== -1) {
+                        users[userIndex].name = name;
+                        users[userIndex].email = email;
+                        users[userIndex].phone = phone;
+                        localStorage.setItem('marketing_agency_users', JSON.stringify(users));
+                        
+                        // Обновляем текущего пользователя
+                        currentUser.name = name;
+                        currentUser.email = email;
+                        currentUser.phone = phone;
+                        localStorage.setItem('marketing_agency_current_user', JSON.stringify(currentUser));
+                        
+                        auth.updateUI();
+                        loadProfile();
+                        
+                        modal.remove();
+                        showNotification('Профиль успешно обновлён!', 'success');
+                    }
+                });
+            }
+            
+            function viewRequest(requestId) {
+                const requests = auth.getUserRequests(currentUser.id);
+                const request = requests.find(r => r.id == requestId);
+                
+                if (!request) return;
+                
+                const modal = document.createElement('div');
+                modal.className = 'modal-overlay active';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2><i class="fas fa-file-alt"></i> Заявка #${request.id}</h2>
+                            <button class="close-modal"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="request-details">
+                                <div class="detail-row">
+                                    <span class="detail-label"><i class="fas fa-briefcase"></i> Услуга:</span>
+                                    <span class="detail-value">${getServiceName(request.service)}</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label"><i class="fas fa-calendar"></i> Дата:</span>
+                                    <span class="detail-value">${new Date(request.date).toLocaleString('ru-RU')}</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label"><i class="fas fa-info-circle"></i> Статус:</span>
+                                    <span class="status-badge status-${request.status}">${getStatusText(request.status)}</span>
+                                </div>
+                                ${request.title ? `
+                                <div class="detail-row">
+                                    <span class="detail-label"><i class="fas fa-heading"></i> Название:</span>
+                                    <span class="detail-value">${request.title}</span>
+                                </div>
+                                ` : ''}
+                                ${request.description ? `
+                                <div class="detail-row full-width">
+                                    <span class="detail-label"><i class="fas fa-align-left"></i> Описание:</span>
+                                    <span class="detail-value">${request.description}</span>
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                modal.querySelector('.close-modal').addEventListener('click', () => modal.remove());
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) modal.remove();
+                });
+            }
+            
+            function showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${message}`;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => notification.classList.add('show'), 10);
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }
+            
+            // Обработчик выхода из хедера
+            document.getElementById('headerLogoutBtn')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('Вы уверены, что хотите выйти из аккаунта?')) {
+                    auth.logout();
+                    window.location.href = 'index.html';
+                }
+            });
+            
+            // Стили для страницы профиля
+            const style = document.createElement('style');
+            style.textContent = `
+                .profile-container {
+                    max-width: 1000px;
+                    margin: 0 auto;
+                }
+                
+                .profile-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+                    margin-bottom: 40px;
+                    padding: 40px;
+                    background: var(--card-bg);
+                    border-radius: var(--border-radius);
+                    box-shadow: var(--shadow);
+                }
+                
+                .profile-avatar {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    background: var(--gradient-red);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 40px;
+                    color: white;
+                    flex-shrink: 0;
+                }
+                
+                .profile-info {
+                    flex: 1;
+                }
+                
+                .profile-info h1 {
+                    font-size: 28px;
+                    margin-bottom: 8px;
+                }
+                
+                .profile-email, .profile-date {
+                    color: var(--light-gray);
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+                
+                .profile-email i, .profile-date i {
+                    margin-right: 8px;
+                    color: var(--primary-red);
+                }
+                
+                .profile-actions {
+                    display: flex;
+                    gap: 12px;
+                    flex-shrink: 0;
+                }
+                
+                .btn-primary {
+                    background: var(--gradient-red);
+                    color: white;
+                    border: none;
+                    padding: 12px 24px;
+                    border-radius: 25px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+                
+                .btn-primary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 20px rgba(230,57,70,0.4);
+                }
+                
+                .btn-outline {
+                    background: transparent;
+                    color: var(--primary-red);
+                    border: 2px solid var(--primary-red);
+                    padding: 12px 24px;
+                    border-radius: 25px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+                
+                .btn-outline:hover {
+                    background: var(--primary-red);
+                    color: white;
+                }
+                
+                .btn-secondary {
+                    background: transparent;
+                    border: 2px solid var(--light-gray);
+                    color: var(--light-gray);
+                    padding: 12px 24px;
+                    border-radius: 25px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+                
+                .btn-secondary:hover {
+                    border-color: var(--primary-red);
+                    color: var(--primary-red);
+                }
+                
+                .profile-stats {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 20px;
+                    margin-bottom: 40px;
+                }
+                
+                .stat-card {
+                    background: var(--card-bg);
+                    padding: 25px;
+                    border-radius: var(--border-radius);
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    box-shadow: var(--shadow);
+                }
+                
+                .stat-icon {
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 22px;
+                }
+                
+                .stat-info {
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .stat-number {
+                    font-size: 32px;
+                    font-weight: 800;
+                }
+                
+                .stat-label {
+                    font-size: 14px;
+                    color: var(--light-gray);
+                }
+                
+                .requests-section {
+                    background: var(--card-bg);
+                    border-radius: var(--border-radius);
+                    padding: 30px;
+                    box-shadow: var(--shadow);
+                }
+                
+                .section-header {
+                    margin-bottom: 25px;
+                }
+                
+                .section-header h2 {
+                    font-size: 22px;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+                
+                .section-header h2 i {
+                    color: var(--primary-red);
+                }
+                
+                .empty-state {
+                    text-align: center;
+                    padding: 60px 20px;
+                }
+                
+                .empty-state i {
+                    font-size: 60px;
+                    color: var(--primary-red);
+                    margin-bottom: 20px;
+                    opacity: 0.5;
+                }
+                
+                .empty-state h3 {
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+                
+                .empty-state p {
+                    color: var(--light-gray);
+                    margin-bottom: 25px;
+                }
+                
+                .requests-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                
+                .request-card {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding: 20px;
+                    background: rgba(255,255,255,0.03);
+                    border-radius: 12px;
+                    transition: all 0.3s;
+                }
+                
+                .request-card:hover {
+                    background: rgba(255,255,255,0.06);
+                    transform: translateX(5px);
+                }
+                
+                .request-id {
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: var(--primary-red);
+                    min-width: 50px;
+                }
+                
+                .request-info {
+                    flex: 1;
+                }
+                
+                .request-info h3 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+                
+                .request-info p {
+                    font-size: 13px;
+                    color: var(--light-gray);
+                }
+                
+                .request-info p i {
+                    margin-right: 6px;
+                }
+                
+                .btn-view {
+                    background: rgba(255,255,255,0.1);
+                    border: none;
+                    color: var(--text-color);
+                    padding: 10px 18px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 14px;
+                }
+                
+                .btn-view:hover {
+                    background: var(--primary-red);
+                    color: white;
+                }
+                
+                .status-badge {
+                    padding: 6px 14px;
+                    border-radius: 20px;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+                
+                .status-new {
+                    background: rgba(230, 57, 70, 0.2);
+                    color: var(--primary-red);
+                }
+                
+                .status-in-progress {
+                    background: rgba(255, 193, 7, 0.2);
+                    color: #ffc107;
+                }
+                
+                .status-completed {
+                    background: rgba(40, 167, 69, 0.2);
+                    color: #28a745;
+                }
+                
+                .modal-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0,0,0,0.8);
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 3000;
+                    padding: 20px;
+                }
+                
+                .modal-overlay.active {
+                    display: flex;
+                }
+                
+                .modal-content {
+                    background: var(--card-bg);
+                    border-radius: var(--border-radius);
+                    width: 100%;
+                    max-width: 500px;
+                    max-height: 90vh;
+                    overflow-y: auto;
+                    animation: modalSlide 0.3s ease;
+                }
+                
+                @keyframes modalSlide {
+                    from { opacity: 0; transform: translateY(-20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                
+                .modal-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 25px 30px;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                }
+                
+                .modal-header h2 {
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+                
+                .modal-header h2 i {
+                    color: var(--primary-red);
+                }
+                
+                .close-modal {
+                    background: transparent;
+                    border: none;
+                    color: var(--light-gray);
+                    font-size: 20px;
+                    cursor: pointer;
+                    transition: color 0.3s;
+                    padding: 5px;
+                }
+                
+                .close-modal:hover {
+                    color: var(--primary-red);
+                }
+                
+                .modal-body {
+                    padding: 30px;
+                }
+                
+                .request-details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 18px;
+                }
+                
+                .detail-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    gap: 15px;
+                }
+                
+                .detail-row.full-width {
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                
+                .detail-label {
+                    font-weight: 500;
+                    color: var(--light-gray);
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 14px;
+                }
+                
+                .detail-label i {
+                    color: var(--primary-red);
+                    width: 16px;
+                }
+                
+                .detail-value {
+                    text-align: right;
+                    font-weight: 500;
+                }
+                
+                .form-actions {
+                    display: flex;
+                    gap: 12px;
+                    margin-top: 25px;
+                }
+                
+                .notification {
+                    position: fixed;
+                    bottom: 30px;
+                    right: 30px;
+                    background: var(--card-bg);
+                    padding: 15px 25px;
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                    transform: translateX(150%);
+                    transition: transform 0.3s ease;
+                    z-index: 4000;
+                }
+                
+                .notification.show {
+                    transform: translateX(0);
+                }
+                
+                .notification.success {
+                    border-left: 4px solid #28a745;
+                }
+                
+                .notification.success i {
+                    color: #28a745;
+                }
+                
+                @media (max-width: 768px) {
+                    .profile-header {
+                        flex-direction: column;
+                        text-align: center;
+                        padding: 30px 20px;
+                    }
+                    
+                    .profile-actions {
+                        width: 100%;
+                        flex-direction: column;
+                    }
+                    
+                    .btn-primary, .btn-outline {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    
+                    .profile-stats {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    
+                    .request-card {
+                        flex-wrap: wrap;
+                    }
+                    
+                    .request-info {
+                        order: 2;
+                        width: 100%;
+                    }
+                    
+                    .form-actions {
+                        flex-direction: column;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .profile-stats {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .profile-avatar {
+                        width: 80px;
+                        height: 80px;
+                        font-size: 32px;
+                    }
+                    
+                    .profile-info h1 {
+                        font-size: 22px;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

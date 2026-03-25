@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход | INSIDE360 — Рекламное агентство</title>
+    <meta name="description" content="Вход в личный кабинет рекламного агентства INSIDE360. SMM-продвижение, создание сайтов, контекстная реклама и SEO.">
+    <meta name="csrf-token" content="<?php echo isset($_SESSION['csrf_token']) ? $_SESSION['csrf_token'] : ''; ?>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><img src="img/logo.svg" alt="Рекламное агентство"></div>
+            Рекламное <span>агентство</span>
+        </a>
+        
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="services.html" class="nav-link">Услуги</a></li>
+                <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li id="authNav">
+                    <a href="login.html" class="nav-link active" id="loginLink">Вход</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- <button class="contact-button" id="openFormBtn">ОБСУДИТЬ ПРОЕКТ</button> -->
+        <button id="themeToggle" aria-label="Сменить тему">🌓</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <main class="page-content">
+        <div class="auth-container">
+            <h1 class="auth-title">Вход в личный кабинет</h1>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username" class="form-label">Логин или Email *</label>
+                    <input type="text" id="username" class="form-input" placeholder="Введите логин или email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Пароль *</label>
+                    <input type="password" id="password" class="form-input" placeholder="Введите пароль" required>
+                    <div class="password-toggle">
+                        <button type="button" id="togglePassword" class="text-button">
+                            <i class="fas fa-eye"></i> Показать пароль
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Запомнить меня</span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Войти</button>
+                
+                <div id="loginMessage" class="message" style="display: none; margin-top: 20px; padding: 10px; border-radius: 8px;"></div>
+            </form>
+            
+            <div class="auth-switch">
+                <p>Еще нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+            </div>
+            
+            <!-- <div class="demo-credentials" style="margin-top: 30px; padding: 20px; background: var(--card-bg); border-radius: 12px;">
+                <h3 style="margin-bottom: 10px; font-size: 16px;">Демо-доступ:</h3>
+                <p style="margin-bottom: 5px; font-size: 14px;"><strong>Администратор:</strong> admin / cot_admin456</p>
+                <p style="font-size: 14px;"><strong>Пользователь:</strong> demo / demo123</p>
+            </div> -->
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="terms.html">Пользовательское соглашение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Контакты</h3>
+                    <p>г. Владивосток, Океанский проспект, 101а</p>
+                    <p>г. Находка, ул. Сенявина, 12</p>
+                    <p>+7 (924) 000-97-96</p>
+                    <p>info@inside360.ru</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3 class="footer-title">Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://vk.com/inside360ru" class="social-link" target="_blank" aria-label="ВКонтакте">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/inside360" class="social-link" target="_blank" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/79240025330" class="social-link" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                
+                <a href="privacy.html" class="privacy-link">Политика конфиденциальности</a>
+                <p class="copyright">© 2024 INSIDE360. Все права защищены</p>
+                <p>ИНН: 1234567890, ОГРН: 1234567890123</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="form-popup" id="projectForm">
+        <div class="form-container">
+            <button class="close-button" id="closeForm" aria-label="Закрыть">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="form-title">Обсудим ваш проект</h2>
+            <p class="form-subtitle">Наш менеджер свяжется с вами в ближайшие 10 минут</p>
+            
+            <form id="projectDiscussionForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Ваше имя *</label>
+                    <input type="text" id="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="phone" class="form-input" placeholder="+7 (999) 999-99-99" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" id="email" class="form-input" placeholder="example@mail.ru" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service" class="form-label">Интересующая услуга</label>
+                    <select id="service" class="form-input">
+                        <option value="">Выберите услугу</option>
+                        <option value="smm">SMM Продвижение</option>
+                        <option value="sites">Создание сайтов</option>
+                        <option value="context">Контекстная реклама</option>
+                        <option value="seo">SEO Оптимизация</option>
+                        <option value="listing">Листинг на маркетплейсах</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Сообщение (необязательно)</label>
+                    <textarea id="message" class="form-input" rows="3" placeholder="Расскажите о своем проекте..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>Я соглашаюсь с <a href="privacy.html">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Проверяем, не авторизован ли уже пользователь
+            const currentUser = auth.getCurrentUser();
+            if (currentUser) {
+                if (currentUser.role === 'admin') {
+                    window.location.href = 'admin.html';
+                } else {
+                    window.location.href = 'profile.html';
+                }
+                return;
+            }
+            
+            const loginForm = document.getElementById('loginForm');
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            const loginMessage = document.getElementById('loginMessage');
+            
+            if (togglePassword && passwordInput) {
+                togglePassword.addEventListener('click', function() {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i> Показать пароль' : '<i class="fas fa-eye-slash"></i> Скрыть пароль';
+                });
+            }
+            
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value;
+                    const btn = loginForm.querySelector('button[type="submit"]');
+                    
+                    btn.disabled = true;
+                    btn.textContent = 'Вход...';
+                    
+                    const result = await auth.login(username, password);
+                    
+                    loginMessage.textContent = result.message;
+                    loginMessage.style.display = 'block';
+                    
+                    if (result.success) {
+                        loginMessage.style.background = 'rgba(40, 167, 69, 0.2)';
+                        loginMessage.style.color = '#28a745';
+                        loginMessage.style.border = '1px solid rgba(40, 167, 69, 0.3)';
+                        
+                        setTimeout(() => {
+                            const user = auth.getCurrentUser();
+                            if (user && user.role === 'admin') {
+                                window.location.href = 'admin.html';
+                            } else {
+                                window.location.href = 'profile.html';
+                            }
+                        }, 1000);
+                    } else {
+                        loginMessage.style.background = 'rgba(220, 53, 69, 0.2)';
+                        loginMessage.style.color = '#dc3545';
+                        loginMessage.style.border = '1px solid rgba(220, 53, 69, 0.3)';
+                    }
+                    
+                    btn.disabled = false;
+                    btn.textContent = 'Войти';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

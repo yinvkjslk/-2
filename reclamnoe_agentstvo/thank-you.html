@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спасибо! - Рекламное агентство</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><img src="img/logo.svg" alt="Рекламное агентство"></div>
+            Рекламное <span>агентство</span>
+        </a>
+        
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="services.html" class="nav-link">Услуги</a></li>
+                <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li id="authNav">
+                    <a href="login.html" class="nav-link" id="loginLink">Вход</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <button id="themeToggle" aria-label="Сменить тему">🌓</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <main class="page-content">
+        <div class="thank-you-page">
+            <div class="container">
+                <div class="thank-you-content">
+                    <div class="thank-you-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    
+                    <h1 class="thank-you-title">Спасибо за вашу заявку!</h1>
+                    
+                    <div class="thank-you-message">
+                        <p>Наш менеджер свяжется с вами в ближайшее время для уточнения деталей и консультации.</p>
+                        <p>Обычно мы перезваниваем в течение 10-15 минут в рабочее время (Пн-Пт, 9:00-18:00).</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>Контактная информация</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <div class="info-label">Телефон</div>
+                                    <div class="info-value">+7 (924) 000-97-96</div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <div class="info-label">Email</div>
+                                    <div class="info-value">info@inside360.ru</div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <div class="info-label">Режим работы</div>
+                                    <div class="info-value">Пн-Пт: 9:00-18:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="next-steps">
+                        <h3>Что дальше?</h3>
+                        <div class="steps-grid">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <h4>Консультация</h4>
+                                <p>Наш специалист свяжется с вами для обсуждения деталей проекта</p>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <h4>Подготовка предложения</h4>
+                                <p>Мы подготовим индивидуальное коммерческое предложение</p>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <h4>Старт работы</h4>
+                                <p>После согласования деталей мы приступаем к реализации проекта</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="index.html" class="btn-primary">
+                            <i class="fas fa-home"></i> На главную
+                        </a>
+                        <a href="portfolio.html" class="btn-secondary">
+                            <i class="fas fa-briefcase"></i> Смотреть портфолио
+                        </a>
+                        <a href="contacts.html" class="btn-outline">
+                            <i class="fas fa-headset"></i> Контакты
+                        </a>
+                    </div>
+                    
+                    <div class="social-invitation">
+                        <p>Подписывайтесь на нас в социальных сетях, чтобы быть в курсе новостей и акций:</p>
+                        <div class="social-links">
+                            <a href="https://vk.com/inside360ru" class="social-link" target="_blank" aria-label="ВКонтакте">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="https://t.me/inside360" class="social-link" target="_blank" aria-label="Telegram">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://wa.me/79240025330" class="social-link" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="terms.html">Пользовательское соглашение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Контакты</h3>
+                    <p>г. Владивосток, Океанский проспект, 101а</p>
+                    <p>г. Находка, ул. Сенявина, 12</p>
+                    <p>+7 (924) 000-97-96</p>
+                    <p>info@inside360.ru</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3 class="footer-title">Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://vk.com/inside360ru" class="social-link" target="_blank" aria-label="ВКонтакте">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/inside360" class="social-link" target="_blank" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/79240025330" class="social-link" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+<div class="footer-bottom">
+                <a href="privacy.html" class="privacy-link">Политика конфиденциальности</a>
+                <p class="copyright">© 2024 INSIDE360. Все права защищены</p>
+                <p>ИНН: 1234567890, ОГРН: 1234567890123</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/api-auth.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.textContent = `
+                .thank-you-page {
+                    padding: 80px 0;
+                }
+                
+                .thank-you-content {
+                    text-align: center;
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+                
+                .thank-you-icon {
+                    font-size: 80px;
+                    color: var(--primary-red);
+                    margin-bottom: 30px;
+                }
+                
+                .thank-you-title {
+                    font-size: 36px;
+                    margin-bottom: 30px;
+                }
+                
+                .thank-you-message {
+                    font-size: 18px;
+                    color: var(--light-gray);
+                    margin-bottom: 50px;
+                    line-height: 1.6;
+                }
+                
+                .thank-you-message p {
+                    margin-bottom: 15px;
+                }
+                
+                .contact-info {
+                    background: var(--card-bg);
+                    border-radius: var(--border-radius);
+                    padding: 40px;
+                    margin-bottom: 50px;
+                }
+                
+                .contact-info h3 {
+                    font-size: 24px;
+                    margin-bottom: 30px;
+                }
+                
+                .info-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 30px;
+                }
+                
+                .info-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    text-align: left;
+                }
+                
+                .info-item i {
+                    font-size: 32px;
+                    color: var(--primary-red);
+                    width: 50px;
+                }
+                
+                .info-label {
+                    font-size: 14px;
+                    color: var(--light-gray);
+                    margin-bottom: 5px;
+                }
+                
+                .info-value {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                
+                .next-steps {
+                    margin-bottom: 50px;
+                }
+                
+                .next-steps h3 {
+                    font-size: 24px;
+                    margin-bottom: 40px;
+                }
+                
+                .steps-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 30px;
+                }
+                
+                .step {
+                    background: var(--card-bg);
+                    padding: 30px;
+                    border-radius: var(--border-radius);
+                    position: relative;
+                }
+                
+                .step-number {
+                    position: absolute;
+                    top: -20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 40px;
+                    height: 40px;
+                    background: var(--gradient-red);
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                
+                .step h4 {
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+                
+                .step p {
+                    color: var(--light-gray);
+                    line-height: 1.6;
+                }
+                
+                .action-buttons {
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+                    margin-bottom: 50px;
+                    flex-wrap: wrap;
+                }
+                
+                .action-buttons a {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    text-decoration: none;
+                    padding: 15px 30px;
+                    border-radius: 50px;
+                    font-weight: 600;
+                    transition: all 0.3s;
+                }
+                
+                .btn-primary {
+                    background: var(--gradient-red);
+                    color: white;
+                }
+                
+                .btn-secondary {
+                    background: var(--dark-gray);
+                    color: var(--text-color);
+                }
+                
+                .btn-outline {
+                    background: transparent;
+                    border: 2px solid var(--primary-red);
+                    color: var(--primary-red);
+                }
+                
+                .btn-outline:hover {
+                    background: var(--primary-red);
+                    color: white;
+                }
+                
+                .social-invitation {
+                    padding-top: 40px;
+                    border-top: 1px solid rgba(255,255,255,0.1);
+                }
+                
+                .social-invitation p {
+                    margin-bottom: 20px;
+                    color: var(--light-gray);
+                }
+                
+                .social-links {
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+                }
+                
+                .social-links .social-link {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background: var(--dark-gray);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                    color: var(--text-color);
+                    transition: all .3s;
+                    text-decoration: none;
+                }
+                
+                .social-links .social-link:hover {
+                    transform: translateY(-5px);
+                    background: var(--gradient-red);
+                    color: #fff;
+                }
+                
+                @media (max-width: 768px) {
+                    .thank-you-title {
+                        font-size: 28px;
+                    }
+                    
+                    .info-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .info-item {
+                        justify-content: center;
+                        text-align: center;
+                        flex-direction: column;
+                    }
+                    
+                    .steps-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .action-buttons {
+                        flex-direction: column;
+                    }
+                    
+                    .action-buttons a {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио работ | Кейсы рекламного агентства INSIDE360</title>
+    <meta name="description" content="Портфолио реализованных проектов: SMM-продвижение, создание сайтов, SEO-кейсы. Результаты клиентов — увеличение продаж до 300%. Смотрите примеры работ!">
+    <meta name="keywords" content="портфолио рекламного агентства, наши кейсы, примеры работ, успешные проекты, результаты клиентов, SMM кейсы, SEO кейсы, кейсы по созданию сайтов">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><img src="img/logo.svg" alt="Рекламное агентство"></div>
+            Рекламное <span>агентство</span>
+        </a>
+        
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="services.html" class="nav-link">Услуги</a></li>
+                <li><a href="portfolio.html" class="nav-link active">Портфолио</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li id="authNav">
+                    <a href="login.html" class="nav-link" id="loginLink">Вход</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <button id="themeToggle" aria-label="Сменить тему">🌓</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <main class="page-content">
+        <div class="portfolio-page">
+            <div class="portfolio-hero">
+                <div class="portfolio-hero-content">
+                    <h1 class="section-title">Наши работы</h1>
+                    <p class="portfolio-subtitle">Более 150 успешных проектов в различных сферах бизнеса</p>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Все проекты</button>
+                    <button class="filter-btn" data-filter="landing">Лендинг</button>
+                    <button class="filter-btn" data-filter="site">Сайт</button>
+                    <button class="filter-btn" data-filter="shop">Интернет-магазины</button>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <a href="case-1-nedvizhimost.html" class="portfolio-card" data-category="landing">
+                        <div class="portfolio-image"><img src="img/Лендинг _Недвижимость Премиум_.jpg" alt="Рекламное агентство"></div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Лендинг "Недвижимость Премиум"</h3>
+                            <span class="portfolio-category">Лендинг</span>
+                            <p class="portfolio-desc">Продающий лендинг для агентства недвижимости премиум-класса. Конверсия 8%.</p>
+                            <div class="portfolio-link">Смотреть проект <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    
+                    <a href="case-2-gk-biznes-klass.html" class="portfolio-card" data-category="site">
+                        <div class="portfolio-image"><img src="img/Многостраничный сайт _ЖК Бизнес-класса_.jpg" alt="Рекламное агентство"></div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Многостраничный сайт "ЖК Бизнес-класса"</h3>
+                            <span class="portfolio-category">Сайт</span>
+                            <p class="portfolio-desc">Корпоративный сайт жилого комплекса с каталогом квартир и онлайн-бронированием.</p>
+                            <div class="portfolio-link">Смотреть проект <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    
+                    <a href="case-3-dentomir-seo.html" class="portfolio-card" data-category="landing">
+                        <div class="portfolio-image"><img src="img/SEO для сети стоматологий _ДентоМир_.jpg" alt="Рекламное агентство"></div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Лендинг "Мед.Клиника"</h3>
+                            <span class="portfolio-category">Лендинг</span>
+                            <p class="portfolio-desc">Рост органического трафика на 180% за 6 месяцев. ТОП-10 по 35 ключевым запросам.</p>
+                            <div class="portfolio-link">Смотреть проект <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    
+                    <a href="case-4-ecohome-listing.html" class="portfolio-card" data-category="site">
+                        <div class="portfolio-image"><img src="img/4.jpg" alt="Рекламное агентство"></div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Корпоративный сайт "Дезинфекция"</h3>
+                            <span class="portfolio-category">Сайт</span>
+                            <p class="portfolio-desc">Размещение на Wildberries и Ozon. Увеличение продаж на 120% за 4 месяца.</p>
+                            <div class="portfolio-link">Смотреть проект <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    
+                    <a href="case-5-energyfit-smm.html" class="portfolio-card" data-category="shop">
+                        <div class="portfolio-image"><img src="img/3пр.jpg" alt="Рекламное агентство"></div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Интернет-магазин "Парфюмерия"</h3>
+                            <span class="portfolio-category">Интернет-магазины</span>
+                            <p class="portfolio-desc">Увеличение вовлеченности на 85% и продаж абонементов на 60% за 3 месяца.</p>
+                            <div class="portfolio-link">Смотреть проект <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    
+                    <a href="case-6-stroigrant-sites.html" class="portfolio-card" data-category="site">
+                        <div class="portfolio-image"><img src="img/5.jpg" alt="Рекламное агентство"></div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Многостраничный сайт "Автоматизация"</h3>
+                            <span class="portfolio-category">Сайт</span>
+                            <p class="portfolio-desc">Современный сайт строительной компании с каталогом проектов и онлайн-заказами.</p>
+                            <div class="portfolio-link">Смотреть проект <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    
+                    <a href="case-7-cafe-smm.html" class="portfolio-card" data-category="shop">
+                        <div class="portfolio-image"><img src="img/7.jpg" alt="Рекламное агентство"></div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Интернет-магазин "Спецодежда"</h3>
+                            <span class="portfolio-category">Интернет-магазины</span>
+                            <p class="portfolio-desc">Рост среднего чека на 25% через акции в Instagram. Увеличение повторных посещений.</p>
+                            <div class="portfolio-link">Смотреть проект <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                    
+                    <a href="case-8-uridfirma-seo.html" class="portfolio-card" data-category="landing">
+                        <div class="portfolio-image"><img src="img/6.jpg" alt="Рекламное агентство"></div>
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Лендинг "Строительство"</h3>
+                            <span class="portfolio-category">Лендинг</span>
+                            <p class="portfolio-desc">Продвижение по высококонкурентным запросам. Рост заявок на консультацию на 90%.</p>
+                            <div class="portfolio-link">Смотреть проект <i class="fas fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="portfolio-stats">
+                    <h2>Мы в цифрах</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Успешных проектов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Довольных клиентов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">45+</div>
+                            <div class="stat-label">Сотрудников в команде</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5 лет</div>
+                            <div class="stat-label">Опыта на рынке</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Кнопка загрузки больше проектов -->
+                <!-- <div class="load-more-container"> -->
+                    <!-- <button class="discuss-btn" id="loadMoreBtn">Показать еще проекты</button> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="terms.html">Пользовательское соглашение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Контакты</h3>
+                    <p>г. Владивосток, Океанский проспект, 101а</p>
+                    <p>г. Находка, ул. Сенявина, 12</p>
+                    <p>+7 (924) 000-97-96</p>
+                    <p>info@inside360.ru</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h3 class="footer-title">Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://vk.com/inside360ru" class="social-link" target="_blank" aria-label="ВКонтакте">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/inside360" class="social-link" target="_blank" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/79240025330" class="social-link" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                
+<div class="footer-bottom">
+                <a href="privacy.html" class="privacy-link">Политика конфиденциальности</a>
+                <p class="copyright">© 2024 INSIDE360. Все права защищены</p>
+                <p>ИНН: 1234567890, ОГРН: 1234567890123</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="form-popup" id="projectForm">
+        <div class="form-container">
+            <button class="close-button" id="closeForm" aria-label="Закрыть">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="form-title">Обсудим ваш проект</h2>
+            <p class="form-subtitle">Наш менеджер свяжется с вами в ближайшие 10 минут</p>
+            
+            <form id="projectDiscussionForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Ваше имя *</label>
+                    <input type="text" id="name" class="form-input" placeholder="Иван Иванов" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="form-label">Телефон *</label>
+                    <input type="tel" id="phone" class="form-input" placeholder="+7 (999) 999-99-99" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" id="email" class="form-input" placeholder="example@mail.ru" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service" class="form-label">Интересующая услуга</label>
+                    <select id="service" class="form-input">
+                        <option value="">Выберите услугу</option>
+                        <option value="smm">SMM Продвижение</option>
+                        <option value="sites">Создание сайтов</option>
+                        <option value="context">Контекстная реклама</option>
+                        <option value="seo">SEO Оптимизация</option>
+                        <option value="listing">Листинг на маркетплейсах</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Сообщение (необязательно)</label>
+                    <textarea id="message" class="form-input" rows="3" placeholder="Расскажите о своем проекте..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>Я соглашаюсь с <a href="privacy.html">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/api-auth.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.dataset.filter;
+                    
+                    portfolioCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    alert('В скором времени здесь будет загружено больше проектов');
+                });
+            }
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                .portfolio-card {
+                    position: relative;
+                    background: var(--card-bg);
+                    border-radius: var(--border-radius);
+                    overflow: hidden;
+                    transition: transform 0.3s ease;
+                    box-shadow: var(--shadow);
+                    text-decoration: none;
+                    color: var(--text-color);
+                    display: block;
+                }
+                
+                .portfolio-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 15px 30px rgba(230,57,70,0.2);
+                }
+                
+                .portfolio-image {
+                    position: relative;
+                    height: 250px;
+                    overflow: hidden;
+                    background: var(--dark-gray);
+                }
+                
+                .portfolio-image::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0,0,0,0.3);
+                    z-index: 1;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                
+                .portfolio-card:hover .portfolio-image::before {
+                    opacity: 1;
+                }
+                
+                .portfolio-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+                
+                .portfolio-content {
+                    position: relative;
+                    padding: 25px;
+                    background: linear-gradient(135deg, rgba(54,63,73,0.95) 0%, rgba(38,38,38,0.95) 100%);
+                }
+                
+                body.light-theme .portfolio-content {
+                    background: linear-gradient(135deg, rgba(239,239,253,0.98) 0%, rgba(252,244,244,0.98) 100%);
+                    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+                }
+                
+                body.light-theme .portfolio-title {
+                    color: #262626;
+                }
+                
+                body.light-theme .portfolio-desc {
+                    color: #666666;
+                }
+                
+                body.light-theme .portfolio-link {
+                    color: #e63946;
+                }
+                
+                body.light-theme .portfolio-card:hover .portfolio-link {
+                    color: #262626;
+                }
+                
+                .portfolio-hero {
+                    background: linear-gradient(90deg, rgba(29,30,44,0.9) 40%, rgba(29,30,44,0.6) 100%), 
+                                url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+                    height: 400px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    color: white;
+                    margin-bottom: 60px;
+                    border-radius: var(--border-radius);
+                }
+                
+                .portfolio-subtitle {
+                    font-size: 20px;
+                    margin-top: 20px;
+                    opacity: 0.9;
+                }
+                
+                .portfolio-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                    gap: 30px;
+                    margin: 40px 0;
+                }
+                
+                .portfolio-title {
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                    color: var(--text-color);
+                }
+                
+                .portfolio-category {
+                    display: inline-block;
+                    background: rgba(230,57,70,0.2);
+                    color: var(--primary-red);
+                    padding: 5px 15px;
+                    border-radius: 20px;
+                    font-size: 14px;
+                    margin-bottom: 15px;
+                }
+                
+                .portfolio-desc {
+                    color: var(--light-gray);
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                }
+                
+                .portfolio-link {
+                    display: inline-flex;
+                    align-items: center;
+                    color: var(--primary-red);
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: all .3s;
+                }
+                
+                .portfolio-link i {
+                    margin-left: 8px;
+                    transition: transform .3s;
+                }
+                
+                .portfolio-card:hover .portfolio-link {
+                    color: var(--text-color);
+                }
+                
+                .portfolio-card:hover .portfolio-link i {
+                    transform: translateX(5px);
+                }
+                
+                .portfolio-stats {
+                    margin: 80px 0;
+                    text-align: center;
+                }
+                
+                .portfolio-stats h2 {
+                    font-size: 32px;
+                    margin-bottom: 40px;
+                }
+                
+                .stats-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 30px;
+                }
+                
+                .stat-item {
+                    padding: 30px 20px;
+                }
+                
+                .stat-number {
+                    font-size: 48px;
+                    font-weight: 800;
+                    color: var(--primary-red);
+                    margin-bottom: 10px;
+                }
+                
+                .stat-label {
+                    font-size: 18px;
+                    color: var(--text-color);
+                    font-weight: 500;
+                }
+                
+                .load-more-container {
+                    text-align: center;
+                    margin: 40px 0;
+                }
+                
+                @media (max-width: 768px) {
+                    .portfolio-hero {
+                        height: 300px;
+                        padding: 20px;
+                    }
+                    
+                    .portfolio-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .stats-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .filter-buttons {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 10px;
+                    }
+                    
+                    .filter-btn {
+                        width: 100%;
+                        padding: 10px;
+                    }
+                    
+                    .stats-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

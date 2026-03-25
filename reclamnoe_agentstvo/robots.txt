@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Disallow admin paths
+Disallow: /admin.html
+Disallow: /profile.html
+Disallow: /js/auth.js
+
+# Sitemap
+Sitemap: https://reclamnoe_agentstvo/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 1
+
